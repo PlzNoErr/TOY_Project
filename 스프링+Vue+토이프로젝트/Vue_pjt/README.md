@@ -1,3 +1,3 @@
-# VUE-PJT-1116
+# VUE-PJT
 
-# 2022-11-15 관통프로젝트 프론트 엔드 Vue-Cli
+# 2022-11 관통프로젝트 FrontEnd, npm, vue cli, router, vuex

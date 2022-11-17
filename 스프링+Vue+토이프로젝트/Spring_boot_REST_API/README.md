@@ -1,4 +1,4 @@
-# REST-API-PJT-1115
+# REST-API-PJT
 
-## 2022-11-15 관통프로젝트 백엔드 REST API
+# 2022-11 관통프로젝트 BackEnd Spring Boot REST API
 
