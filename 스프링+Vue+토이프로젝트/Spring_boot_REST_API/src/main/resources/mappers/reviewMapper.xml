@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- name space는 UserRepo의 fully qualified name으로 설정한다. -->
+<mapper namespace="com.ssafy.ssafit.model.dao.ReviewDao">
+
+    <resultMap id="ReviewMap" type="Review">
+        <result column="review_id" property="reviewId"/>
+        <result column="user_seq" property="userSeq"/>
+        <result column="video_id" property="videoId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+    </resultMap>
+
+
+    <insert id="insertReview" parameterType="Review">
+        INSERT INTO REVIEW
+            (user_seq, video_id, create_time, title, content)
+        VALUES (#{userSeq}, #{videoId}, now(), #{title}, #{content})
+    </insert>
+
+    <delete id="deleteReview" parameterType="long">
+        DELETE
+        FROM REVIEW
+        WHERE review_id = #{reviewId}
+    </delete>
+
+    <update id="updateReview" parameterType="Review">
+        UPDATE REVIEW
+        SET title   = #{title},
+            content = #{content}
+        WHERE review_id = #{reviewId}
+    </update>
+
+    <select id="selectByReviewId" parameterType="long" resultMap="ReviewMap">
+        SELECT *
+        FROM REVIEW
+        WHERE review_id = #{reviewId}
+    </select>
+
+    <select id="selectAllByVideoId" parameterType="long" resultMap="ReviewMap">
+        SELECT *
+        FROM REVIEW
+        WHERE video_id = #{videoId}
+    </select>
+
+</mapper>
