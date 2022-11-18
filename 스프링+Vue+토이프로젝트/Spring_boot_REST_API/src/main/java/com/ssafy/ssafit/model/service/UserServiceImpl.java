@@ -43,6 +43,16 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public Optional<User> checkForReduplicationCheckById(String userId) {
+        return userDao.seletUserForReduplicationCheckById(userId);
+    }
+
+    @Override
+    public Optional<User> checkForReduplicationCheckByNickname(String nickName) {
+        return userDao.seletUserForReduplicationCheckByNickname(nickName);
+    }
+
+    @Override
     public void addFollow(long followingSeq, long followedSeq) {
         userDao.insertFollow(followingSeq, followedSeq);
     }

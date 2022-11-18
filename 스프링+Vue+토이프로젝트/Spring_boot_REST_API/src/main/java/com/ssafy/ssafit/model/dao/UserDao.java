@@ -23,11 +23,14 @@ public interface UserDao {
     // 회원정보 하나만 가져오기 (id 활용)
     User seletUserById(String userId);
 
-    //  login검증
+    // login검증
     Optional<User> seletUserByIdandPassword(String userId, String password);
 
-    // 조건에 맞는 회원정보 가져오기
+    // 회원가입 중복 검증을 위해 아이디 가져오기
+    Optional<User> seletUserForReduplicationCheckById(String userId);
 
+    // 회원가입 중복 검증을 위해 닉네임 가져오기
+    Optional<User> seletUserForReduplicationCheckByNickname(String nickName);
 
     /*
     * 팔로우 테이블을 활용

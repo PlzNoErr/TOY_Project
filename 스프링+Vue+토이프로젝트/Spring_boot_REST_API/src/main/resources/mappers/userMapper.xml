@@ -53,6 +53,18 @@
 		WHERE user_id = #{userId} AND password = #{password}
 	</select>
 
+	<select id="seletUserForReduplicationCheckById" parameterType="String" resultMap="UserMap">
+		SELECT *
+		FROM USER
+		WHERE user_id = #{userId}
+	</select>
+
+	<select id="seletUserForReduplicationCheckByNickname" parameterType="String" resultMap="UserMap">
+		SELECT *
+		FROM USER
+		WHERE nickname = #{nickName}
+	</select>
+
 	<insert id="insertFollow" parameterType="long">
 		insert into FOLLOW
 		(following_user_seq, follow_user_seq)

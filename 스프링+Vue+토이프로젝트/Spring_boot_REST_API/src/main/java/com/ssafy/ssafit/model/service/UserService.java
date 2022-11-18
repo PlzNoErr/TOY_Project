@@ -22,6 +22,12 @@ public interface UserService {
     // 로그인 검증 (id, password 활용)
     Optional<User> checkUserForLogin(String userId, String password);
 
+    // 종복 회원 검증 (id 활용)
+    Optional<User> checkForReduplicationCheckById(String userId);
+
+    // 종복 회원 검증 (nickname 활용)
+    Optional<User> checkForReduplicationCheckByNickname(String nickName);
+
     // 조건에 맞는 회원정보 가져오기
 
 
