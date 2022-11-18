@@ -1,4 +1,4 @@
-# REST-API-PJT-1115
+# SPRING-BOOT_PJT
 
-## 2022-11-15 관통프로젝트 백엔드 REST API
+# 2022-11 관통프로젝트 BACKEnd REST API, Mybatis, MySQL, Swagger
 
